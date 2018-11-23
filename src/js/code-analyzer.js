@@ -80,7 +80,7 @@ const elseIfStatement =(stat) =>{
     ret = ret.concat(consequent);
 
     let t = stat.alternate.type;
-    let alternate = t==='IfStatement'? elseIfStatement(stat.alternate):t==='BlockStatement'?block(t,stat.alternate):Body([stat.alternate]);
+    let alternate = t==='IfStatement'? elseIfStatement(stat.alternate):block(t,stat.alternate);
 
     return ret.concat(alternate);
 };
@@ -94,7 +94,7 @@ const ifStatement = (stat) =>{
     ret = ret.concat(consequent);
 
     let t = stat.alternate.type;
-    let alternate = t==='IfStatement'? elseIfStatement(stat.alternate): t==='BlockStatement'?block(t,stat.alternate): Body([stat.alternate]);
+    let alternate = t==='IfStatement'? elseIfStatement(stat.alternate): block(t,stat.alternate);
 
     return ret.concat(alternate);
 };
