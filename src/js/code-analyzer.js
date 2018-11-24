@@ -111,8 +111,7 @@ const forStatement = (stat) =>{
     let ret = [{line: line, type: type, name: '', condition: condition, value: ''}];
 
     let body = block(stat.body.type, stat.body);
-    // returret.concat(body);
-    return ret;
+    return ret.concat(body);
 };
 const block = (type, body)=>{
     return type ==='BlockStatement'? Body(body.body): Body([body]);
