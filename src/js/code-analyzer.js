@@ -72,7 +72,7 @@ const whileStatement = (stat) =>{
 };
 const elseIfStatement =(stat) =>{
     let line = stat.loc.start.line;
-    let type = 'Else-if Statement';
+    let type = 'Else If Statement';
     let condition = escodegen.generate(stat.test);
     let ret = [{line: line, type: type, name: '', condition: condition, value: ''}];
 
@@ -111,7 +111,8 @@ const forStatement = (stat) =>{
     let ret = [{line: line, type: type, name: '', condition: condition, value: ''}];
 
     let body = block(stat.body.type, stat.body);
-    return ret.concat(body);
+    // returret.concat(body);
+    return ret;
 };
 const block = (type, body)=>{
     return type ==='BlockStatement'? Body(body.body): Body([body]);
