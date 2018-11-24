@@ -72,7 +72,7 @@ const whileStatement = (stat) =>{
 };
 const elseIfStatement =(stat) =>{
     let line = stat.loc.start.line;
-    let type = 'Else If Statement';
+    let type = 'Else-if Statement';
     let condition = escodegen.generate(stat.test);
     let ret = [{line: line, type: type, name: '', condition: condition, value: ''}];
 
